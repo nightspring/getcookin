@@ -1,8 +1,235 @@
+/* Space out content a bit */
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: 'Sansita', sans-serif;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
-a {
-  color: #00B7FF;
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+  padding-right: 15px;
+  padding-left: 15px;
 }
+
+/* Custom page header */
+.header {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+/* Make the masthead heading the same height as the navigation */
+.header h2 {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 30px;
+}
+
+.header h2 a {
+  text-decoration: none;
+}
+
+ul li {
+  font-size: 1.1em;
+}
+
+nav ul li {
+  border-radius: 5px;
+}
+
+/* Custom page footer */
+.footer {
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+}
+
+/* Customize container */
+@media (min-width: 768px) {
+  .container {
+    max-width: 900px;
+  }
+
+}
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+/* Reciper container */
+
+.recipeContainer {
+
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 900px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.tabs {
+  text-align: center;
+}
+
+.tabs li:hover {
+  cursor: pointer;
+}
+
+.tabs li {
+  border-radius: 5px;
+  display: inline-block;
+  margin: 3px 0;
+  padding: 8px 10px;
+  font-size: 1.2em;
+}
+
+li.active {
+  background-color: #999;
+}
+
+.panel {
+  display: none;
+}
+
+div.active {
+  display: inline;
+}
+
+.save {
+  background-color: #D6D6D6;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  padding: 4px 8px;
+}
+
+.save:focus {
+  outline: none;
+}
+
+/* My Cookbook */
+#cookbook {
+  text-align: center;
+}
+
+/* Login Area */
+
+.loginArea {
+  margin: 10px;
+  text-align: center;
+}
+
+.loginArea label {
+  margin: 5px;
+  text-align: right;
+  width: 70px;
+}
+
+.loginArea input {
+  width: 120px;
+}
+
+.loginArea .submitButton {
+  margin-top: 15px;
+  margin-bottom: 10px;
+  width: 70px;
+}
+
+/* Signup Area */
+
+.signupArea {
+  margin: 10px;
+  text-align: center;
+}
+
+.signupArea label {
+  margin: 5px;
+  text-align: right;
+  width: 120px;
+}
+
+.signupArea input {
+  width: 120px;
+}
+
+.signupArea .submitButton {
+  margin-top: 15px;
+  margin-bottom: 20px;
+  width: 70px;
+}
+
+
+/* Main marketing message and sign up button */
+.myJumbotron {
+  background: url(../img/pasta.jpg) no-repeat right bottom;
+  background-size: cover;
+  border-bottom: 1px solid #e5e5e5;
+  border-radius: 10px;
+  padding-top: 15px;
+  padding-bottom: 5px;
+  margin-top: 40px;
+  text-align: center;
+}
+
+.myJumbotron .btn {
+  padding: 10px 20px;
+  font-size: 18px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.text-background h1 {
+  margin-left: 10%;
+  margin-right: 5%;
+  text-align: left;
+}
+
+.text-background h1 span {
+  font-size: .5em;
+}
+
+/* Supporting marketing content */
+.marketing {
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 40px;
+  max-width: 730px;
+  text-align: center;
+}
+.marketing p + h3 {
+  margin-top: 28px;
+}
+
+.footerLink {
+  color: black;
+}
+
+.footerLink:hover {
+  text-decoration: none;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  /* Remove the padding we set earlier */
+  .header,
+  .marketing,
+  .footer {
+    padding-right: 0;
+    padding-left: 0;
+  }
+  /* Space out the masthead */
+  .header {
+    margin-bottom: 30px;
+  }
+  /* Remove the bottom border on the jumbotron for visual effect */
+  .jumbotron {
+    border-bottom: 0;
+  }
+}
+
+
+
+/* Viewport IE10 hack */
+@-ms-viewport     { width: device-width; }
+@-o-viewport      { width: device-width; }
+@viewport         { width: device-width; }
+
