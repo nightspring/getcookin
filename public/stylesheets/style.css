@@ -68,6 +68,7 @@ nav ul li {
 }
 
 .tabs {
+  margin-bottom: -15px;
   text-align: center;
 }
 
@@ -91,14 +92,23 @@ li.active {
   display: none;
 }
 
+.panel.active img {
+  border-radius: 15px;
+}
+
 div.active {
   display: inline;
+}
+
+.recMaxWidth {
+  border-bottom: 1px solid #e5e5e5;
+  max-width: 700px;
 }
 
 .save {
   background-color: #D6D6D6;
   border-radius: 4px;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
   padding: 4px 8px;
 }
 
@@ -128,6 +138,10 @@ div.active {
   width: 120px;
 }
 
+.loginArea input:focus {
+  outline: none;
+}
+
 .loginArea .submitButton {
   margin-top: 15px;
   margin-bottom: 10px;
@@ -149,6 +163,10 @@ div.active {
 
 .signupArea input {
   width: 120px;
+}
+
+.signupArea input:focus {
+  outline: none;
 }
 
 .signupArea .submitButton {

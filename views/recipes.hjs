@@ -39,89 +39,173 @@
           <li rel='lunch'>Lunch</li>
           <li rel='dinner'>Dinner</li>
           <li rel='dessert'>Dessert</li>
-          <li rel='appetizers'>Appetizers &amp; Snacks</li>
           <li rel='asian'>Asian</li>
-          <li rel='indian'>Indian</li>
           <li rel='italian'>Italian</li>
           <li rel='mexican'>Mexican</li>
         </ul>
 
+
         <div id='breakfast' class='panel active'>
-          <h2>French Toast</h2>
-
-          <img src='http://12tomatoes.com/wp-content/uploads/2016/09/french-toast-recipe.jpg' height='200' />
-
-          <h4>Ingredients</h4>
-          <ul>
-            <li>2 eggs</li>
-            <li>1 cup milk</li>
-            <li>1 tbs butter</li>
-            <li>1 tsp cinnamon</li>
-          </ul>
-         
-          <h4>Directions</h4>
-          <ol>
-            <li>Mix eggs, milk, and cinnamon in a bowl.</li>
-            <li>Warm pan over medium heat and melt butter</li>
-            <li>Dip bread into mixture then cook until golden brown</li>
-          </ol>
-        
-          <button class='save' rel='frenchtoast'>Save</button>
-       
-          <h2>Pancakes</h2>
-
-          <img src='http://ghk.h-cdn.co/assets/16/38/980x490/landscape-1474822198-how-to-make-pancakes.jpg' height='200' />
-
-          <h4>Ingredients</h4>
-          <p>Eggs, Milk, Butter, Bread, Cinnamon</p>
-
-          <h4>Directions</h4>
-          <p>Mix eggs, milk, and cinnamon in a bowl. Dip bread into mixture. Cook in a pan on medium heat.</p>
-          <button class='save' rel='pancakes'>Save</button>
-
+          {{#breakfast}}
+            <div class='recMaxWidth'>
+              <h2>{{title}}</h2>
+              <img src='{{img}}' />
+              <h4>Ingredients</h4>
+              <ul>
+                {{#ing}}
+                  <li>{{.}}</li>
+                {{/ing}}
+              </ul>
+              <h4>Directions</h4>
+              <ol>
+                {{#dir}}
+                  <li>{{.}}</li>
+                {{/dir}}
+              </ol>
+              <button class='save' value='{{id}}'>Save</button>
+            </div>
+          {{/breakfast}}
         </div>
 
         <div id='lunch' class='panel'>
-          <p>Lunch tab</p>
+        
+          {{#lunch}}
+            <div class='recMaxWidth'>
+              <h2>{{title}}</h2>
+              <img src='{{img}}' />
+              <h4>Ingredients</h4>
+              <ul>
+                {{#ing}}
+                  <li>{{.}}</li>
+                {{/ing}}
+              </ul>
+              <h4>Directions</h4>
+              <ol>
+                {{#dir}}
+                  <li>{{.}}</li>
+                {{/dir}}
+              </ol>
+              <button class='save' value='{{id}}'>Save</button>
+            </div>
+          {{/lunch}}
         </div>
 
         <div id='dinner' class='panel'>
-          <p>Dinner tab</p>
+          {{#dinner}}
+            <div class='recMaxWidth'>
+              <h2>{{title}}</h2>
+              <img src='{{img}}' />
+              <h4>Ingredients</h4>
+              <ul>
+                {{#ing}}
+                  <li>{{.}}</li>
+                {{/ing}}
+              </ul>
+              <h4>Directions</h4>
+              <ol>
+                {{#dir}}
+                  <li>{{.}}</li>
+                {{/dir}}
+              </ol>
+              <button class='save' value='{{id}}'>Save</button>
+            </div>
+          {{/dinner}}
         </div>
 
         <div id='dessert' class='panel'>
-          <p>Dessert tab</p>
-        </div>
-
-        <div id='appetizers' class='panel'>
-          <p>Appetizers and snacks tab</p>
+          {{#dessert}}
+            <div class='recMaxWidth'>
+              <h2>{{title}}</h2>
+              <img src='{{img}}' />
+              <h4>Ingredients</h4>
+              <ul>
+                {{#ing}}
+                  <li>{{.}}</li>
+                {{/ing}}
+              </ul>
+              <h4>Directions</h4>
+              <ol>
+                {{#dir}}
+                  <li>{{.}}</li>
+                {{/dir}}
+              </ol>
+              <button class='save' value='{{id}}'>Save</button>
+            </div>
+          {{/dessert}}
         </div>
 
         <div id='asian' class='panel'>
-          <p>Asian tab</p>
-        </div>
-
-        <div id='indian' class='panel'>
-          <p>Indian tab</p>
+          {{#asian}}
+            <div class='recMaxWidth'>
+              <h2>{{title}}</h2>
+              <img src='{{img}}' />
+              <h4>Ingredients</h4>
+              <ul>
+                {{#ing}}
+                  <li>{{.}}</li>
+                {{/ing}}
+              </ul>
+              <h4>Directions</h4>
+              <ol>
+                {{#dir}}
+                  <li>{{.}}</li>
+                {{/dir}}
+              </ol>
+              <button class='save' value='{{id}}'>Save</button>
+            </div>
+          {{/asian}}
         </div>
 
         <div id='italian' class='panel'>
-          <p>Italian tab</p>
+          {{#italian}}
+            <div class='recMaxWidth'>
+              <h2>{{title}}</h2>
+              <img src='{{img}}' />
+              <h4>Ingredients</h4>
+              <ul>
+                {{#ing}}
+                  <li>{{.}}</li>
+                {{/ing}}
+              </ul>
+              <h4>Directions</h4>
+              <ol>
+                {{#dir}}
+                  <li>{{.}}</li>
+                {{/dir}}
+              </ol>
+              <button class='save' value='{{id}}'>Save</button>
+            </div>
+          {{/italian}}
         </div>
-
+          
         <div id='mexican' class='panel'>
-          <p>Mexican tab</p>
+          {{#mexican}}
+            <div class='recMaxWidth'>
+              <h2>{{title}}</h2>
+              <img src='{{img}}' />
+              <h4>Ingredients</h4>
+              <ul>
+                {{#ing}}
+                  <li>{{.}}</li>
+                {{/ing}}
+              </ul>
+              <h4>Directions</h4>
+              <ol>
+                {{#dir}}
+                  <li>{{.}}</li>
+                {{/dir}}
+              </ol>
+              <button class='save' value='{{id}}'>Save</button>
+            </div>
+          {{/mexican}}
         </div>
 
       </div>
     </div> <!-- end recipeContainer -->
       
     <div class='container'>
-      <footer class="footer">
         <p><a class="footerLink" href="http://codyrayhunt.com">By Cody Ray Hunt</a></p>
-      </footer>
     </div> <!-- /container -->
-
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="js/ie10-viewport-bug-workaround.js"></script>
