@@ -11,5 +11,10 @@ $(document).ready(function() {
 		$('#' + $panelRel).addClass('active');
 
 	});
+
+	$('.save').on('click', function() {
+		var myVal = $(this).val();
+		
+	});
 });
 

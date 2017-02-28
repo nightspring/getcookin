@@ -270,7 +270,7 @@ for(var i in recipes) {
 	}
 }
 
-var result = [breakfast, lunch, dinner, dessert, asian, italian, mexican];
+var result = [breakfast, lunch, dinner, dessert, asian, italian, mexican, recipes];
 
 module.exports = result;
 

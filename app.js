@@ -13,6 +13,7 @@ var index = require('./routes/index');
 var recipes = require('./routes/recipes');
 var cookbook = require('./routes/cookbook');
 var authRoutes = require('./routes/auth');
+var api = require('./routes/api');
 
 var app = express();
 
@@ -34,6 +35,7 @@ app.use(passport.session());
 
 //basic routes
 app.use(authRoutes);
+app.use(api);
 app.use('/', index);
 app.get('/recipes', recipes);
 app.get('/cookbook', cookbook);

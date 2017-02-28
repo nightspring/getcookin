@@ -116,9 +116,45 @@ div.active {
   outline: none;
 }
 
+.delete {
+  background-color: #D6D6D6;
+  border-radius: 4px;
+  margin-bottom: 12px;
+  padding: 4px 8px;
+}
+
+.delete:focus {
+  outline: none;
+}
+
 /* My Cookbook */
 #cookbook {
+  margin-bottom: -9px;
   text-align: center;
+}
+
+button a {
+  color: black;
+}
+
+button a:hover {
+  color: black;
+  text-decoration: none;
+}
+
+
+.notes {
+  margin-left: 10px;
+  margin-bottom: 15px;
+}
+
+.notes:focus {
+  outline: none;
+}
+
+.saveNote {
+  float: left;
+  margin: 0 0 5px 10px;
 }
 
 /* Login Area */

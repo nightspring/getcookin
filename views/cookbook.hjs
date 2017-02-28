@@ -33,13 +33,40 @@
       {{> nav }}
 
       <h1 id='cookbook'>{{ firstName }}'s Cookbook</h1>
+      
+      <div id='myRecipes' class='panel active'>
+          {{#myRecipes}}
+            <div class='recMaxWidth'>
+              <h2>{{title}}</h2>
+              <img src='{{img}}' />
+              <h4>Ingredients</h4>
+              <ul>
+                {{#ing}}
+                  <li>{{.}}</li>
+                {{/ing}}
+              </ul>
+              <h4>Directions</h4>
+              <ol>
+                {{#dir}}
+                  <li>{{.}}</li>
+                {{/dir}}
+              </ol>
+              <h4>Notes</h4>
+              <form class="notesForm">
+                <button class='saveNote'>Save</button>
+                <textarea name="notes" class="notes" cols="80" rows="3"></textarea>
+              </form>
+              <button class='delete'><a href="/deleteRecipe/{{id}}">Delete</a></button>
+            </div>
+          {{/myRecipes}}
+        </div>
+
+
     </div> <!-- /container -->
 
       
     <div class='container'>
-      <footer class="footer">
         <p><a class="footerLink" href="http://codyrayhunt.com">By Cody Ray Hunt</a></p>
-      </footer>
     </div> <!-- /container -->
 
 
