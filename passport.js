@@ -28,6 +28,9 @@ function register(req, username, password, done) {
 			if(password !== req.body.password2) {
 				return done(null, false, req.flash('passwords', "Passwords don't match."));
 			}
+			if(!req.body.name) {
+				return done(null, false, req.flash('noName', "Please provide your name."));
+			}
 
 			var newUser = {
 				username: username,

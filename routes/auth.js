@@ -23,6 +23,7 @@ router
 		res.render("signup", {
 			userExists: req.flash('userExists'),
 			passwords: req.flash('passwords'),
+			noName: req.flash('noName'),
 			partials: {nav: 'nav'}
 		});
 	})
