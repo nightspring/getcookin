@@ -2,16 +2,16 @@ var db = require("./db");
 var passport = require("passport");
 var LocalStrategy = require("passport-local").Strategy;
 
-passport.use(new LocalStrategy(authenticate));
+passport.use(new LocalStrategy({passReqToCallback: true}, authenticate));
 passport.use("local-register", new LocalStrategy({passReqToCallback: true}, register));
 
-function authenticate(username, password, done) {
+function authenticate(req, username, password, done) {
 	db("users")
 		.where("username", username)
 		.first()
 		.then(function(user) {
 			if(!user || user.password !== password) {
-				return done(null, false, {message: "Invalid login credentials."});
+				return done(null, false, req.flash('invalid', 'Invalid login credentials.'));
 			}
 			done(null, user);
 		}, done);
@@ -23,10 +23,10 @@ function register(req, username, password, done) {
 		.first()
 		.then(function(user) {
 			if(user) {
-				return done(null, false, {message: "That username already exists."});
+				return done(null, false, req.flash('userExists', 'That username already exists.'));
 			}
 			if(password !== req.body.password2) {
-				return done(null, false, {message: "Passwords don't match."});
+				return done(null, false, req.flash('passwords', "Passwords don't match."));
 			}
 
 			var newUser = {
@@ -41,7 +41,7 @@ function register(req, username, password, done) {
 					newUser.id = ids[0];
 					done(null, newUser);
 				});
-		});
+		}, done);
 }
 
 passport.serializeUser(function(user, done) {

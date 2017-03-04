@@ -23,8 +23,8 @@ router.get("/deleteRecipe/:id", loginRequired, function(req, res, next) {
 	});
 });
 
-// Need to return confirmation or error... and when changing in recipes.hjs, add to each category's button
-router.post("/saveRecipe/:id", loginRequired, function(req, res, next) {
+// doesn't include loginRequired, as jQuery redirects page upon error 
+router.post("/saveRecipe/:id", function(req, res, next) {
 	var newRecipe = {
 		user_id: req.user.id,
 		rec: req.params.id
@@ -39,6 +39,16 @@ router.post("/saveRecipe/:id", loginRequired, function(req, res, next) {
 			db("recipes").insert(newRecipe).then(res.send('true'));
 		}
 	});
+});
+
+router.put("/saveNote/:id", function(req, res, next) {
+	var updateNote = {
+		note: req.body.note
+	};
+	console.log(updateNote);
+	db("recipes").where("rec", req.params.id).andWhere("user_id", req.user.id)
+	.update(updateNote)
+	.then(res.send("true"));
 });
 
 module.exports = router;

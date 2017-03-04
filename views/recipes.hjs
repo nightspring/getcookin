@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
     <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="stylesheets/jquery.modal.css" type="text/css" media="screen" />
     <link href="stylesheets/style.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -27,6 +28,17 @@
   </head>
   
   <body>
+  
+  <!-- Facebook Share Button -->
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
+  fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+
     <div class="container">
       <!-- imports nav -->
       {{> nav}}
@@ -47,7 +59,7 @@
 
         <div id='breakfast' class='panel active'>
           {{#breakfast}}
-            <div class='recMaxWidth'>
+            <div class='recDiv'>
               <h2>{{title}}</h2>
               <img src='{{img}}' />
               <h4>Ingredients</h4>
@@ -62,7 +74,8 @@
                   <li>{{.}}</li>
                 {{/dir}}
               </ol>
-              <button class='save' value='{{id}}'>Save</button>
+              <div style="float: left"><button class='save' value='{{id}}'>Save</button></div>
+              <div class="fb-share-button" data-href="https://codyrayhunt.com/getcookin/recipes" data-layout="button" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse">Share</a></div>
             </div>
           {{/breakfast}}
         </div>
@@ -70,7 +83,7 @@
         <div id='lunch' class='panel'>
         
           {{#lunch}}
-            <div class='recMaxWidth'>
+            <div class='recDiv'>
               <h2>{{title}}</h2>
               <img src='{{img}}' />
               <h4>Ingredients</h4>
@@ -85,14 +98,15 @@
                   <li>{{.}}</li>
                 {{/dir}}
               </ol>
-              <button class='save' value='{{id}}'>Save</button>
+              <div style="float: left"><button class='save' value='{{id}}'>Save</button></div>
+              <div class="fb-share-button" data-href="https://codyrayhunt.com/getcookin/recipes" data-layout="button" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse">Share</a></div>
             </div>
           {{/lunch}}
         </div>
 
         <div id='dinner' class='panel'>
           {{#dinner}}
-            <div class='recMaxWidth'>
+            <div class='recDiv'>
               <h2>{{title}}</h2>
               <img src='{{img}}' />
               <h4>Ingredients</h4>
@@ -107,14 +121,15 @@
                   <li>{{.}}</li>
                 {{/dir}}
               </ol>
-              <button class='save' value='{{id}}'>Save</button>
+              <div style="float: left"><button class='save' value='{{id}}'>Save</button></div>
+              <div class="fb-share-button" data-href="https://codyrayhunt.com/getcookin/recipes" data-layout="button" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse">Share</a></div>
             </div>
           {{/dinner}}
         </div>
 
         <div id='dessert' class='panel'>
           {{#dessert}}
-            <div class='recMaxWidth'>
+            <div class='recDiv'>
               <h2>{{title}}</h2>
               <img src='{{img}}' />
               <h4>Ingredients</h4>
@@ -129,14 +144,15 @@
                   <li>{{.}}</li>
                 {{/dir}}
               </ol>
-              <button class='save' value='{{id}}'>Save</button>
+              <div style="float: left"><button class='save' value='{{id}}'>Save</button></div>
+              <div class="fb-share-button" data-href="https://codyrayhunt.com/getcookin/recipes" data-layout="button" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse">Share</a></div>
             </div>
           {{/dessert}}
         </div>
 
         <div id='asian' class='panel'>
           {{#asian}}
-            <div class='recMaxWidth'>
+            <div class='recDiv'>
               <h2>{{title}}</h2>
               <img src='{{img}}' />
               <h4>Ingredients</h4>
@@ -151,14 +167,15 @@
                   <li>{{.}}</li>
                 {{/dir}}
               </ol>
-              <button class='save' value='{{id}}'>Save</button>
+              <div style="float: left"><button class='save' value='{{id}}'>Save</button></div>
+              <div class="fb-share-button" data-href="https://codyrayhunt.com/getcookin/recipes" data-layout="button" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse">Share</a></div>
             </div>
           {{/asian}}
         </div>
 
         <div id='italian' class='panel'>
           {{#italian}}
-            <div class='recMaxWidth'>
+            <div class='recDiv'>
               <h2>{{title}}</h2>
               <img src='{{img}}' />
               <h4>Ingredients</h4>
@@ -173,14 +190,15 @@
                   <li>{{.}}</li>
                 {{/dir}}
               </ol>
-              <button class='save' value='{{id}}'>Save</button>
+              <div style="float: left"><button class='save' value='{{id}}'>Save</button></div>
+              <div class="fb-share-button" data-href="https://codyrayhunt.com/getcookin/recipes" data-layout="button" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse">Share</a></div>
             </div>
           {{/italian}}
         </div>
           
         <div id='mexican' class='panel'>
           {{#mexican}}
-            <div class='recMaxWidth'>
+            <div class='recDiv'>
               <h2>{{title}}</h2>
               <img src='{{img}}' />
               <h4>Ingredients</h4>
@@ -195,14 +213,28 @@
                   <li>{{.}}</li>
                 {{/dir}}
               </ol>
-              <button class='save' value='{{id}}'>Save</button>
+              <div style="float: left"><button class='save' value='{{id}}'>Save</button></div>
+              <div class="fb-share-button" data-href="https://codyrayhunt.com/getcookin/recipes" data-layout="button" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse">Share</a></div>
             </div>
           {{/mexican}}
         </div>
 
       </div>
+
+    <!-- Custom notifications -->
+    <div id="recSaved" style="display:none;">
+      <h4>Recipe saved to your cookbook! <a href="#" rel="modal:close">Close.</a></h4>
+    </div>
+    <div id="recExists" style="display:none;">
+      <h4>This recipe is already saved to your cookbook! <a href="#" rel="modal:close">Close.</a></h4>
+    </div>
+    
+    <a id="recSavedLink" href="#recSaved" rel="modal:open" style="display:none;"></a>
+    <a id="recExistsLink" href="#recExists" rel="modal:open" style="display:none;"></a>  
+
     </div> <!-- end recipeContainer -->
-      
+    
+  
     <div class='container'>
         <p><a class="footerLink" href="http://codyrayhunt.com">By Cody Ray Hunt</a></p>
     </div> <!-- /container -->
@@ -210,6 +242,7 @@
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="js/ie10-viewport-bug-workaround.js"></script>
     <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/jquery.modal.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="js/main.js"></script>
 
   </body>

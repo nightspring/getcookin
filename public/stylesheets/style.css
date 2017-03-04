@@ -85,7 +85,7 @@ nav ul li {
 }
 
 li.active {
-  background-color: #999;
+  background-color: #ddd;
 }
 
 .panel {
@@ -100,13 +100,23 @@ div.active {
   display: inline;
 }
 
-.recMaxWidth {
-  border-bottom: 1px solid #e5e5e5;
+.dirMaxWidth {
   max-width: 700px;
 }
 
+.recDiv {
+border-bottom: 1px solid #e5e5e5;
+max-width: 700px;
+}
+
+.fb-share-button {
+  margin: 2px 0 10px 4px;
+}
+
+
+/* My Cookbook */
 .save {
-  background-color: #D6D6D6;
+  background-color: #EAEBE8;
   border-radius: 4px;
   margin-bottom: 12px;
   padding: 4px 8px;
@@ -117,9 +127,9 @@ div.active {
 }
 
 .delete {
-  background-color: #D6D6D6;
+  background-color: #E86A6D;
   border-radius: 4px;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
   padding: 4px 8px;
 }
 
@@ -127,9 +137,9 @@ div.active {
   outline: none;
 }
 
-/* My Cookbook */
+
 #cookbook {
-  margin-bottom: -9px;
+  margin-bottom: 0;
   text-align: center;
 }
 
@@ -142,10 +152,24 @@ button a:hover {
   text-decoration: none;
 }
 
+.myImg {
+  margin-top: 3px;
+}
 
 .notes {
-  margin-left: 10px;
-  margin-bottom: 15px;
+  border: 1px solid black;
+  border-radius: 3px;
+  box-sizing: border-box;
+  margin-left: 7px;
+  margin-bottom: 3px;
+  padding-left: 5px;
+  padding-top: 3px;
+  resize: none;
+}
+
+.noteEdit {
+  background-color: #EDF1F2;
+  border: 1px dashed black;
 }
 
 .notes:focus {
@@ -153,8 +177,29 @@ button a:hover {
 }
 
 .saveNote {
+  background-color: #EAEBE8;
+  border-radius: 3px;
   float: left;
   margin: 0 0 5px 10px;
+}
+
+.saveNote:focus {
+  outline: none;
+}
+
+.edit {
+  background-color: #337ab7;
+  color: white;
+}
+
+h3.browse {
+  margin-top: 0;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+#browse:hover {
+  text-decoration: none;
 }
 
 /* Login Area */
@@ -175,7 +220,8 @@ button a:hover {
 }
 
 .loginArea input:focus {
-  outline: none;
+  outline-style: solid;
+  outline-width: thin;
 }
 
 .loginArea .submitButton {
@@ -202,7 +248,8 @@ button a:hover {
 }
 
 .signupArea input:focus {
-  outline: none;
+  outline-style: solid;
+  outline-width: thin;
 }
 
 .signupArea .submitButton {
@@ -259,6 +306,32 @@ button a:hover {
 
 .footerLink:hover {
   text-decoration: none;
+}
+
+/* Accordion CSS */
+
+h2.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 5px 12px 8px 12px;
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  text-align: left;
+  outline: none;
+  transition: 0.4s;
+  margin: 3px 1px 3px 1px;
+}
+
+h2.accordion.active, h2.accordion:hover {
+  background-color: #ddd;
+}
+
+div.accPanel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
 }
 
 /* Responsive: Portrait tablets and up */

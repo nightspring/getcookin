@@ -19,18 +19,26 @@ router.get('/cookbook', function(req, res, next) {
 			.where("user_id", user_id)
 			.then(function(recipeDB) {
 
-				// stores the rec id #s.
+				// stores the rec id#s and notes.
 				var recIDs = [];
+				var notes = [];
 				for(var i in recipeDB) {
 					recIDs.push(recipeDB[i].rec);
+					notes.push(recipeDB[i].note);
 				}
 
 				// gets the Recipe objects to pass
 				var myRecipes = [];
+				var noteIndex = 0;
 				for(var j in recIDs) {
 					for(var k in recipes) {
 						if(recipes[k].id == recIDs[j]) {
-							myRecipes.push(recipes[k]);
+
+							// creates duplicate recipe object and pushes saved note to it
+							var newRec = recipes[k];
+							newRec.note = notes[noteIndex];
+							myRecipes.push(newRec);
+							noteIndex++;
 						}
 					}
 				}
@@ -38,6 +46,7 @@ router.get('/cookbook', function(req, res, next) {
 				res.render('cookbook', { 
   					firstName: nameToPass,
   					myRecipes: myRecipes,
+  					notes: notes,
   					partials: {nav: "navAuth"}
   				});
 			});	

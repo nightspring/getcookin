@@ -16,7 +16,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
     <!-- Custom styles for this template -->
-    <link href="stylesheets/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="stylesheets/jquery.modal.css" type="text/css" media="screen" />
+    <link href="stylesheets/style.css" rel="stylesheet" />
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -33,46 +34,57 @@
       {{> nav }}
 
       <h1 id='cookbook'>{{ firstName }}'s Cookbook</h1>
-      
       <div id='myRecipes' class='panel active'>
           {{#myRecipes}}
-            <div class='recMaxWidth'>
-              <h2>{{title}}</h2>
-              <img src='{{img}}' />
+           <div class='recMaxWidth'>
+             <h2 class='accordion'>{{title}}</h2>
+             <div class='accPanel'>
+              <img src='{{img}}' class='myImg' />
               <h4>Ingredients</h4>
               <ul>
                 {{#ing}}
                   <li>{{.}}</li>
                 {{/ing}}
               </ul>
+              <div class='dirMaxWidth'>
               <h4>Directions</h4>
               <ol>
                 {{#dir}}
                   <li>{{.}}</li>
                 {{/dir}}
               </ol>
-              <h4>Notes</h4>
-              <form class="notesForm">
-                <button class='saveNote'>Save</button>
-                <textarea name="notes" class="notes" cols="80" rows="3"></textarea>
-              </form>
+            <h4>Notes</h4>
+            <div class="notesForm">
+              <button class='saveNote' value={{id}}>Save</button>
+              <textarea name="notes" class="notes" cols="80" rows="3">{{note}}</textarea>
+              </div>
               <button class='delete'><a href="/deleteRecipe/{{id}}">Delete</a></button>
+              </div>
+            </div>
             </div>
           {{/myRecipes}}
-        </div>
+      </div>
+    
+    <!-- Customized notification -->
+    <h3 class='browse'><a id='browse' href="/recipes">Browse recipes</a></h3>
+    <div id="noteSaved" style="display:none;">
+      <h4>Note saved! <a href="#" rel="modal:close">Close.</a></h4>
+    </div>
+    
+    <a id="noteSavedLink" href="#noteSaved" rel="modal:open" style="display:none;"></a>
 
-
-    </div> <!-- /container -->
-
-      
-    <div class='container'>
+    <footer class="footer">
         <p><a class="footerLink" href="http://codyrayhunt.com">By Cody Ray Hunt</a></p>
+    </footer>
+
     </div> <!-- /container -->
 
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="js/ie10-viewport-bug-workaround.js"></script>
     <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/jquery.modal.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/accordion.js"></script>
     <script src="js/main.js"></script>
 
   </body>
