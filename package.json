@@ -21,7 +21,8 @@
     "serve-favicon": "~2.3.2"
   },
   "devDependencies": {
-    "nodemon": "^1.11.0"
+    "nodemon": "^1.11.0",
+    "pm2": "^2.4.2"
   },
   "jshintConfig": {
     "esversion": 6
