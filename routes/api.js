@@ -29,7 +29,6 @@ router.post("/saveRecipe/:id", function(req, res, next) {
 		user_id: req.user.id,
 		rec: req.params.id
 	};
-
 	db("recipes").where("rec", req.params.id).andWhere("user_id", req.user.id)
 	.first()
 	.then(function(thisRecipe) {
@@ -45,7 +44,6 @@ router.put("/saveNote/:id", function(req, res, next) {
 	var updateNote = {
 		note: req.body.note
 	};
-	console.log(updateNote);
 	db("recipes").where("rec", req.params.id).andWhere("user_id", req.user.id)
 	.update(updateNote)
 	.then(res.send("true"));
