@@ -26,7 +26,7 @@ module.exports = {
       ref  : "origin/master",
       repo : "https://github.com/nightspring/getcookin.git",
       path : "~/getcookin",
-      "post-deploy" : "npm install && pm2 startOrRestart ecosystem.config.js --env production"
+      "post-deploy" : "nvm install && npm install && pm2 startOrRestart ecosystem.config.js --env production"
     }
   }
-};
+}
