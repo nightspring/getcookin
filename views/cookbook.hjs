@@ -56,7 +56,7 @@
             <h4>Notes</h4>
             <div class="notesForm">
               <button class='saveNote' value={{id}}>Save</button>
-              <textarea name="notes" class="notes" cols="80" rows="3">{{note}}</textarea>
+                <textarea name="notes" class="notes" rows="3">{{note}}</textarea>
               </div>
               <button class='delete'><a href="/deleteRecipe/{{id}}">Delete</a></button>
               </div>
