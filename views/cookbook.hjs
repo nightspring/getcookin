@@ -63,16 +63,73 @@
             </div>
             </div>
           {{/myRecipes}}
+
+          <!-- User inputted recipes go here -->
+          {{#addedRecipes}}
+            <div class='recMaxWidth'>
+             <h2 class='accordion'>{{recName}}</h2>
+             <div class='accPanel'>
+              <h4>Ingredients</h4>
+              <textarea class='userAdded' name="recIng" required>{{recIng}}</textarea>
+              
+              <h4>Directions</h4>
+              <textarea class='userAdded' name="recDir" required>{{recDir}}</textarea>
+              <h4>Notes</h4>
+              <div class="notesForm">
+                <button class='userSaveNote' value={{id}}>Save</button>
+                <textarea name="notes" class="notes" rows="3">{{recNotes}}</textarea>
+              </div>
+              <button class='delete'><a href="/deleteAddedRecipe/{{id}}">Delete</a></button>
+             </div>
+            </div> 
+          {{/addedRecipes}}
       </div>
     
-    <!-- Customized notification -->
     <h3 class='browse'><a id='browse' href="/recipes">Browse recipes</a></h3>
+    <h3 class='browse'><a href='#addRecipe' rel="modal:open">Add my own recipe</a></h3>
+
+    <!-- User add recipe modal -->
+    <div id='addRecipe' style='display: none;'>
+      <div class='addRecipeArea'>
+        <form action="/addRecipe" method="post">
+            <div>
+              <label>Recipe Name:</label>
+              <br>
+              <input type="text" name="recName" required/>
+              <br>
+            </div>
+            <div>
+              <label>Ingredients:</label>
+              <br>
+              <textarea class='addRecInput' name="recIng" required></textarea>
+              <br>
+            </div>
+            <div>
+              <label>Directions:</label>
+              <br>
+              <textarea class='addRecInput' name="recDir" required></textarea>
+              <br>
+            </div>
+            <div>
+              <label>Notes:</label>
+              <br>
+              <textarea class='addRecInput' name="recNotes"></textarea>
+              <br>
+            </div>
+            <div>
+              <input class='submitButton' type="submit" value="Save"/>
+              <input class='submitButton' type="reset" value="Reset"/>
+            </div>
+          </form>
+      </div> 
+    </div>
+    <!-- Customized notification -->
     <div id="noteSaved" style="display:none;">
-      <h4>Note saved! <a href="#" rel="modal:close">Close.</a></h4>
+      <h4>Recipe updated! <a href="#noteSavedLink" rel="modal:close">Close.</a></h4>
     </div>
     
     <a id="noteSavedLink" href="#noteSaved" rel="modal:open" style="display:none;"></a>
-
+  
     <footer class="footer">
         <p><a class="footerLink" href="http://codyrayhunt.com">By Cody Ray Hunt</a></p>
     </footer>

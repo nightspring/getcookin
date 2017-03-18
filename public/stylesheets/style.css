@@ -259,6 +259,67 @@ h3.browse {
   width: 70px;
 }
 
+/* Added recipes as they show in the cookbook */
+
+.userAdded {
+  resize: none;
+  height: 70px;
+  width: 50%;
+}
+
+.userAdded:focus {
+  outline: none;
+}
+
+.userSaveNote {
+  background-color: #EAEBE8;
+  border-radius: 3px;
+  float: left;
+  margin: 0 0 5px 10px;
+}
+
+.userSaveNote:focus {
+  outline: none;
+}
+
+.userSaveNote.edit {
+  background-color: #337ab7;
+  color: white;
+}
+
+/* Add Recipe Area */
+
+.addRecipeArea {
+  margin: 10px;
+  text-align: center;
+}
+
+.addRecipeArea label {
+  margin: 5px;
+}
+
+.addRecipeArea input {
+  width: 150px;
+}
+
+.addRecipeArea .addRecInput {
+  height: 70px;
+  resize: none;
+  width: 80%;
+}
+
+
+.addRecipeArea input:focus {
+  outline-style: solid;
+  outline-width: thin;
+}
+
+.addRecipeArea .submitButton {
+  margin-top: 15px;
+  margin-bottom: 20px;
+  width: 70px;
+}
+
 
 /* Main marketing message and sign up button */
 .myJumbotron {

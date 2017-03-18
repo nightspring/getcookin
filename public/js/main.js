@@ -36,8 +36,8 @@ $(document).ready(function() {
 	$('.saveNote').on('click', function() {
 		var $thisButton = $(this);
 		var $noteArea = $(this).next('textarea');
-		var $note = $(this).next('textarea').val();
-		var $recID = $(this).val();
+		var $note = $noteArea.val();
+		var $recID = $thisButton.val();
 
 		var noteObj = {
 			note: $note
@@ -58,10 +58,53 @@ $(document).ready(function() {
 		});
 	});
 
-	// Adds edit class to Save button when textarea is clicked
-	$('textarea').on('click', function() {
+	// Updates user added recipes that have already been added
+	$('.userSaveNote').on('click', function() {
+		var $thisButton = $(this);
+		var $noteArea = $(this).next('textarea');
+		var $dirArea = $(this).parent().prev().prev();
+		var $ingArea = $(this).parent().prev().prev().prev().prev();
+		var $dir = $dirArea.val();
+		var $ing = $ingArea.val();
+		var $note = $noteArea.val();
+		var $recID = $thisButton.val();
+		console.log($dir, $ing, $note, $recID);
+
+		var updatedRecipe = {
+			recIng: $ing,
+			recDir: $dir,
+			recNotes: $note
+		};
+
+		$.ajax({
+			type: 'PUT',
+			url: 'updateRecipe/' + $recID,
+			data: updatedRecipe,
+			success: function(data) {
+				$($thisButton).removeClass('edit');
+				$($noteArea).removeClass('noteEdit');
+				$($dirArea).removeClass('noteEdit');
+				$($ingArea).removeClass('noteEdit');
+				$('#noteSavedLink').click();
+			},
+			error: function(data) {
+				window.location.replace("/login");
+			}
+		});
+	});
+
+	// Adds edit class to Save button when textarea is clicked.
+	$('.notes').on('click', function() {
 		var $textArea = $(this);
 		var $button = $(this).siblings('button');
+		$($button).addClass('edit');
+		$($textArea).addClass('noteEdit');
+	});
+
+	// Adds edit class to Save button when user added textarea is clicked.
+	$('.userAdded').on('click', function() {
+		var $textArea = $(this);
+		var $button = $(this).siblings('div').children('button');
 		$($button).addClass('edit');
 		$($textArea).addClass('noteEdit');
 	});

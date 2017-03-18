@@ -15,6 +15,7 @@ router.get('/cookbook', function(req, res, next) {
 	if(isAuth) {
 		var nameToPass = req.user.name;
 		var user_id = req.user.id;
+		var addedRecipes = [];
 		db("recipes")
 			.where("user_id", user_id)
 			.then(function(recipeDB) {
@@ -43,15 +44,19 @@ router.get('/cookbook', function(req, res, next) {
 					}
 				}
 
-				res.render('cookbook', { 
+				// gets the user added recipes from the db
+				db("added").where("user_id", user_id)
+				.then(function(addedDB) {
+					res.render('cookbook', { 
   					firstName: nameToPass,
   					myRecipes: myRecipes,
   					notes: notes,
+  					addedRecipes: addedDB,
   					partials: {nav: "navAuth"}
-  				});
+  					});
+				});
 			});	
 		
-
 	// else send to login page
 	} else {
 		res.render('login', { 
