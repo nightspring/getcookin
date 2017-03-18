@@ -168,10 +168,7 @@ button a:hover {
   width: 70%;
 }
 
-.noteEdit {
-  background-color: #EDF1F2;
-  border: 1px dashed black;
-}
+
 
 .notes:focus {
   outline: none;
@@ -262,8 +259,13 @@ h3.browse {
 /* Added recipes as they show in the cookbook */
 
 .userAdded {
-  resize: none;
+  border: 1px solid black;
+  border-radius: 3px;
+  box-sizing: border-box;
   height: 70px;
+  padding-left: 5px;
+  padding-top: 3px;
+  resize: none;
   width: 50%;
 }
 
@@ -285,6 +287,11 @@ h3.browse {
 .userSaveNote.edit {
   background-color: #337ab7;
   color: white;
+}
+
+.noteEdit {
+  background-color: #EDF1F2;
+  border: 1px dashed black;
 }
 
 /* Add Recipe Area */
